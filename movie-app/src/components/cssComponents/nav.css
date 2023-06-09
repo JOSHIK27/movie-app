@@ -1,0 +1,11 @@
+.parent {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.child {
+  margin-right: 80px;
+}
+h4 {
+  cursor: pointer;
+}

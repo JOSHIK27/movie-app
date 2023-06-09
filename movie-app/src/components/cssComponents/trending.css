@@ -1,0 +1,11 @@
+.trending {
+  margin: 10px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.trendingParent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

@@ -1,0 +1,11 @@
+.popular {
+  margin: 10px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.popularParent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

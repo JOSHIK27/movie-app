@@ -1,0 +1,17 @@
+.movieParent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.movieImg {
+  border-radius: 50px;
+  overflow: hidden;
+}
+.img1 {
+  transform: scaleX(-1);
+  margin-right: 30px;
+}
+
+.img2 {
+  margin-left: 30px;
+}
