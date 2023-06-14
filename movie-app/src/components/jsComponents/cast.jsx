@@ -27,9 +27,9 @@ function Cast({ id }) {
           cast.map((x) => {
             let url = `https://image.tmdb.org/t/p/original/${x.profile_path}`;
             return (
-              <Card sx={{ maxWidth: 400 }} className="card">
+              <Card sx={{ width: 200 }} className="card">
                 <CardMedia
-                  sx={{ height: 400 }}
+                  sx={{ height: 300 }}
                   image={url}
                   title="green iguana"
                 />

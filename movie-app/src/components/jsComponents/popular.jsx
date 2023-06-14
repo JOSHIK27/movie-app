@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import "../cssComponents/popular.css";
-import MoviePage from "./moviePage";
-import Cast from "./cast";
+import React from "react";
+import MovieInfo from "./movieInfo";
+import Carousel from "better-react-carousel";
 function PopularTrending() {
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=bdaec69ff4e98377065cc8e1b416ac73`;
   const [popularMovies, setPopularMovies] = useState([]);
   const [page, setPage] = useState(true);
-  const [i_d, setId] = useState(-1);
+  const [movie, setMovie] = useState({});
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -14,28 +15,30 @@ function PopularTrending() {
         setPopularMovies(x.results);
       });
   }, []);
-  if (!page) return <Cast id={i_d} />;
+  if (!page) return <MovieInfo movie_info={movie} />;
   function handleClick(x) {
     setPage(false);
-    setId(x);
+    setMovie(x);
   }
   return (
     <>
-      <div className="popularParent">
+      <Carousel cols={5} rows={2} loop>
         {popularMovies &&
           popularMovies.map((x) => {
             let imgUrl = `https://image.tmdb.org/t/p/original/${x.poster_path}`;
             return (
-              <img
-                onClick={() => handleClick(x.id)}
-                className="popular"
-                src={imgUrl}
-                width={300}
-                height={450}
-              />
+              <Carousel.Item>
+                <img
+                  onClick={() => handleClick(x)}
+                  className="popular"
+                  src={imgUrl}
+                  width={200}
+                  height={300}
+                />
+              </Carousel.Item>
             );
           })}
-      </div>
+      </Carousel>
     </>
   );
 }

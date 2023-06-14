@@ -17,7 +17,7 @@ function Navbar() {
           Trending
         </h4>
         <h4 className="child" onClick={m}>
-          Movies
+          Popular
         </h4>
         <h4 className="child">Shows</h4>
         <h4 className="child">More</h4>
